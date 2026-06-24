@@ -1,0 +1,51 @@
+############################################################
+# Evidencia #2: Dev Container do OpenChoreo iniciado
+# Data: 2026-06-24 11:34:33 -03
+############################################################
+
+# Comando para iniciar o Dev Container do OpenChoreo:
+
+docker run --rm -it --name openchoreo-quick-start --pull always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  --network=host ghcr.io/openchoreo/quick-start:v1.1.1
+
+1fe00e18496168f4d7de531e495802c03b14bfd325cecd11f8263b76658358ef
+
+===== docker ps =====
+ID: 1fe00e184961  Image: ghcr.io/openchoreo/quick-start:v1.1.1  Status: Up 4 seconds  Names: openchoreo-quick-start
+
+===== Mensagem de boas-vindas / prompt interno (.welcome) =====
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║             Welcome to OpenChoreo Quick-Start!                ║
+║                                                               ║
+║  Get started:                                                 ║
+║    ./install.sh                       - Install OpenChoreo    ║
+║    ./install.sh --help                - Show all options      ║
+║                                                               ║
+║  Deploy samples:                                              ║
+║    ./deploy-react-starter.sh          - React web app         ║
+║    ./deploy-gcp-demo.sh               - 11 microservices      ║
+║    ls samples/                        - Explore all samples   ║
+║                                                               ║
+║  Clean up:                                                    ║
+║    ./uninstall.sh                     - Uninstall OpenChoreo  ║
+║                                                               ║
+║  Quick commands:                                              ║
+║    k3d cluster list                   - List clusters         ║
+║    kubectl get pods -A                - View all pods         ║
+║                                                               ║
+║  Helpful aliases: k, kgp, kgs, kgn, kga, ll                   ║
+║                                                               ║
+║  Website: https://openchoreo.dev                              ║
+║  Star us: https://github.com/openchoreo/openchoreo            ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+whoami: openchoreo
+pwd: /home/openchoreo
+ferramentas:
+  docker   /usr/bin/docker
+  k3d      /usr/local/bin/k3d
+  kubectl  /usr/local/bin/kubectl
+  helm     /usr/local/bin/helm

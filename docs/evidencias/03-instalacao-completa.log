@@ -1,0 +1,288 @@
+# Evidencia #3: Instalacao do OpenChoreo v1.1.1
+# Inicio: 2026-06-24 11:35:29 -03
+# Comando: ./install.sh --version v1.1.1 (base, sem build/observability)
+############################################################
+
+[INFO] Starting OpenChoreo installation...
+[INFO] Configuration:
+[INFO]   Cluster Name: openchoreo-quick-start
+[INFO]   Image version: v1.1.1
+[INFO]   Chart version: 1.1.1
+[INFO]   Enable Workflow Plane: false
+[INFO]   Enable Observability: false
+[INFO] Verifying prerequisites...
+[SUCCESS] All prerequisites verified
+[INFO] Checking system resources...
+[INFO] System Resources:
+  CPU Cores: 11
+  Memory: 7GB
+  Available Disk Space (home): 398GB
+[INFO] Required Resources:
+  Configuration: Base (Control + Data Planes)
+  Minimum: 1 vCPUs, 2GB RAM, 10GB Disk
+  Recommended: 2 vCPUs, 3GB RAM, 10GB Disk
+[SUCCESS] System resources meet requirements
+[INFO] Creating k3d cluster 'openchoreo-quick-start'...
+INFO[0000] Using config file /home/openchoreo/.k3d-config.yaml (k3d.io/v1alpha5#simple) 
+INFO[0000] portmapping '8080:8080' targets the loadbalancer: defaulting to [servers:*:proxy agents:*:proxy] 
+INFO[0000] portmapping '8443:8443' targets the loadbalancer: defaulting to [servers:*:proxy agents:*:proxy] 
+INFO[0000] portmapping '19080:19080' targets the loadbalancer: defaulting to [servers:*:proxy agents:*:proxy] 
+INFO[0000] portmapping '19443:19443' targets the loadbalancer: defaulting to [servers:*:proxy agents:*:proxy] 
+INFO[0000] portmapping '10081:10081' targets the loadbalancer: defaulting to [servers:*:proxy agents:*:proxy] 
+INFO[0000] portmapping '10082:10082' targets the loadbalancer: defaulting to [servers:*:proxy agents:*:proxy] 
+INFO[0000] portmapping '11080:11080' targets the loadbalancer: defaulting to [servers:*:proxy agents:*:proxy] 
+INFO[0000] portmapping '11085:11085' targets the loadbalancer: defaulting to [servers:*:proxy agents:*:proxy] 
+INFO[0000] portmapping '11081:5601' targets the loadbalancer: defaulting to [servers:*:proxy agents:*:proxy] 
+INFO[0000] portmapping '11082:9200' targets the loadbalancer: defaulting to [servers:*:proxy agents:*:proxy] 
+INFO[0000] Prep: Network                                
+INFO[0000] Re-using existing network 'k3d-openchoreo-quick-start' (74dda7b81cb4c8dab52dbf47032e8a9384474388f84632022b4c32c19f45b5d0) 
+INFO[0000] Created image volume k3d-openchoreo-quick-start-images 
+INFO[0000] Starting new tools node...                   
+INFO[0000] Starting node 'k3d-openchoreo-quick-start-tools' 
+INFO[0001] Creating node 'k3d-openchoreo-quick-start-server-0' 
+INFO[0001] Creating LoadBalancer 'k3d-openchoreo-quick-start-serverlb' 
+INFO[0001] Using the k3d-tools node to gather environment information 
+INFO[0001] Starting new tools node...                   
+INFO[0001] Starting node 'k3d-openchoreo-quick-start-tools' 
+INFO[0002] Starting cluster 'openchoreo-quick-start'    
+INFO[0002] Starting servers...                          
+INFO[0002] Starting node 'k3d-openchoreo-quick-start-server-0' 
+INFO[0013] All agents already running.                  
+INFO[0013] Starting helpers...                          
+INFO[0013] Starting node 'k3d-openchoreo-quick-start-serverlb' 
+INFO[0020] Injecting records for hostAliases (incl. host.k3d.internal) and for 3 network members into CoreDNS configmap... 
+INFO[0022] Cluster 'openchoreo-quick-start' created successfully! 
+INFO[0022] You can now use it like this:                
+kubectl cluster-info
+[SUCCESS] k3d cluster 'openchoreo-quick-start' created successfully
+[INFO] Preloading Docker images for faster deployments...
+[INFO] Cluster: openchoreo-quick-start
+[INFO] Starting image preload for cluster 'openchoreo-quick-start'
+[INFO] Collecting K3s base images...
+[INFO] Collecting Control Plane images...
+[INFO] Collecting Data Plane images...
+[INFO] Found 12 unique images to preload
+[INFO] Pulling 12 Docker images ...
+Pulling docker.io/rancher/local-path-provisioner:v0.0.31 (0s)
+Pulling docker.io/rancher/klipper-helm:v0.9.8-build20250709 (0s)
+Pulling docker.io/rancher/klipper-lb:v0.4.13 (0s)
+Pulling docker.io/rancher/mirrored-coredns-coredns:1.12.3 (0s)
+[WARNING] Image preloading failed - continuing with installation
+[WARNING] Deployments may be slower due to image pulls
+[INFO] Installing cert-manager...
+[INFO] Installing 'cert-manager' in namespace 'cert-manager'...
+Waiting for pods to be created... (0s)
+Waiting for pods to be created... (2s)
+Pods: 0/3 Ready (4s)
+Pods: 0/3 Ready (6s)
+Pods: 0/3 Ready (9s)
+Pods: 0/3 Ready (11s)
+Pods: 0/3 Ready (13s)
+Pods: 0/3 Ready (15s)
+Pods: 0/3 Ready (17s)
+Pods: 0/3 Ready (19s)
+Pods: 0/3 Ready (21s)
+Pods: 0/3 Ready (23s)
+Pods: 0/3 Ready (25s)
+Pods: 1/3 Ready (27s)
+Pods: 1/3 Ready (30s)
+Pods: 1/3 Ready (32s)
+Pods: 2/3 Ready (34s)
+Pods: 2/3 Ready (36s)
+Pods: 3/3 Ready (38s)
+Pods: 3/4 Ready (41s)
+Pods: 3/4 Ready (43s)
+Pods: 3/4 Ready (45s)
+Pods: 3/4 Ready (47s)
+Pods: 3/4 Ready (49s)
+Pods: 3/3 Ready (51s)
+[SUCCESS] Helm release 'cert-manager' installed/upgraded successfully
+[INFO] Waiting for cert-manager webhook to be ready...
+[SUCCESS] cert-manager webhook is ready
+[INFO] Installing External Secrets Operator...
+[INFO] Installing 'external-secrets' in namespace 'external-secrets'...
+Waiting for pods to be created... (0s)
+Waiting for pods to be created... (2s)
+Pods: 0/3 Ready (5s)
+Pods: 0/3 Ready (7s)
+Pods: 0/3 Ready (9s)
+Pods: 0/3 Ready (11s)
+Pods: 0/3 Ready (13s)
+Pods: 0/3 Ready (15s)
+Pods: 0/3 Ready (17s)
+Pods: 0/3 Ready (19s)
+Pods: 0/3 Ready (21s)
+Pods: 0/3 Ready (24s)
+Pods: 0/3 Ready (26s)
+Pods: 0/3 Ready (28s)
+Pods: 0/3 Ready (30s)
+Pods: 0/3 Ready (32s)
+Pods: 0/3 Ready (34s)
+Pods: 0/3 Ready (36s)
+Pods: 0/3 Ready (38s)
+Pods: 0/3 Ready (40s)
+Pods: 0/3 Ready (42s)
+Pods: 0/3 Ready (44s)
+Pods: 0/3 Ready (46s)
+Pods: 0/3 Ready (49s)
+Pods: 0/3 Ready (51s)
+Pods: 0/3 Ready (53s)
+Pods: 0/3 Ready (55s)
+Pods: 0/3 Ready (57s)
+Pods: 0/3 Ready (59s)
+Pods: 0/3 Ready (61s)
+Pods: 0/3 Ready (63s)
+Pods: 0/3 Ready (65s)
+Pods: 0/3 Ready (67s)
+Pods: 0/3 Ready (69s)
+Pods: 0/3 Ready (72s)
+Pods: 0/3 Ready (74s)
+Pods: 0/3 Ready (76s)
+Pods: 0/3 Ready (78s)
+Pods: 0/3 Ready (80s)
+Pods: 0/3 Ready (82s)
+Pods: 0/3 Ready (84s)
+Pods: 0/3 Ready (86s)
+Pods: 0/3 Ready (88s)
+Pods: 0/3 Ready (90s)
+Pods: 0/3 Ready (93s)
+Pods: 0/3 Ready (95s)
+Pods: 1/3 Ready (97s)
+Pods: 1/3 Ready (99s)
+Pods: 1/3 Ready (101s)
+Pods: 1/3 Ready (103s)
+Pods: 1/3 Ready (105s)
+Pods: 1/3 Ready (107s)
+Pods: 1/3 Ready (109s)
+Pods: 1/3 Ready (111s)
+Pods: 1/3 Ready (114s)
+Pods: 1/3 Ready (116s)
+Pods: 1/3 Ready (118s)
+Pods: 2/3 Ready (120s)
+Pods: 2/3 Ready (122s)
+Pods: 3/3 Ready (124s)
+[SUCCESS] Helm release 'external-secrets' installed/upgraded successfully
+[INFO] Installing Gateway API CRDs...
+[SUCCESS] Gateway API CRDs installed
+[INFO] Installing kgateway (v2.2.1)...
+[INFO] Installing 'kgateway-crds' in namespace 'openchoreo-control-plane'...
+[SUCCESS] Helm release 'kgateway-crds' installed/upgraded successfully
+[INFO] Installing 'kgateway' in namespace 'openchoreo-control-plane'...
+[SUCCESS] Helm release 'kgateway' installed/upgraded successfully
+[SUCCESS] kgateway installed
+[INFO] Installing Thunder (0.28.0)...
+[INFO] Installing 'thunder' in namespace 'thunder'...
+Waiting for pods to be created... (0s)
+Pods: 0/1 Ready (2s)
+Pods: 0/1 Ready (4s)
+Pods: 0/1 Ready (6s)
+Pods: 0/1 Ready (8s)
+Pods: 0/1 Ready (10s)
+Pods: 0/1 Ready (12s)
+Pods: 0/1 Ready (14s)
+Pods: 0/1 Ready (16s)
+Pods: 0/1 Ready (19s)
+Pods: 0/1 Ready (21s)
+Pods: 0/1 Ready (23s)
+Pods: 0/1 Ready (25s)
+Pods: 0/1 Ready (27s)
+Pods: 0/1 Ready (29s)
+Pods: 0/1 Ready (31s)
+Pods: 0/1 Ready (33s)
+Pods: 0/1 Ready (36s)
+Pods: 0/1 Ready (38s)
+Pods: 0/1 Ready (40s)
+Pods: 0/1 Ready (42s)
+Pods: 0/1 Ready (44s)
+Pods: 0/1 Ready (46s)
+Pods: 0/1 Ready (48s)
+Pods: 1/1 Ready (50s)
+Pods: 1/1 Ready (53s)
+Pods: 1/1 Ready (55s)
+Pods: 1/1 Ready (57s)
+Pods: 1/1 Ready (59s)
+Waiting for pods to be created... (62s)
+Pods: 0/1 Ready (64s)
+[SUCCESS] Helm release 'thunder' installed/upgraded successfully
+[SUCCESS] Thunder installed
+[INFO] Applying CoreDNS custom config...
+[SUCCESS] CoreDNS config applied
+[INFO] Creating backstage secret...
+[SUCCESS] Backstage secret created
+[INFO] Installing OpenChoreo Control Plane...
+[INFO] Installing 'openchoreo-control-plane' in namespace 'openchoreo-control-plane'...
+Pods: 1/1 Ready (0s)
+Pods: 1/1 Ready (2s)
+Pods: 1/7 Ready (5s)
+[SUCCESS] Helm release 'openchoreo-control-plane' installed/upgraded successfully
+[INFO] Waiting for cluster-gateway to be ready...
+[SUCCESS] Cluster gateway is ready
+[INFO] Extracting cluster-gateway CA certificate...
+[SUCCESS] cluster-gateway-ca certificate is ready
+[SUCCESS] cluster-gateway-ca ConfigMap populated
+[INFO] Setting up Data Plane CA...
+[SUCCESS] Data Plane CA configured
+[INFO] Installing OpenBao...
+[INFO] Installing 'openbao' in namespace 'openbao'...
+Waiting for pods to be created... (0s)
+Pods: 0/1 Ready (2s)
+Pods: 0/1 Ready (4s)
+[SUCCESS] Helm release 'openbao' installed/upgraded successfully
+[INFO] Waiting for OpenBao to be ready...
+[INFO] Configuring OpenBao policies and auth...
+[SUCCESS] OpenBao installed and ClusterSecretStore created
+[INFO] Installing OpenChoreo Data Plane...
+[INFO] Installing 'openchoreo-data-plane' in namespace 'openchoreo-data-plane'...
+Waiting for pods to be created... (0s)
+Pods: 0/2 Ready (2s)
+Pods: 0/2 Ready (4s)
+Pods: 0/2 Ready (6s)
+Pods: 0/2 Ready (8s)
+Pods: 1/2 Ready (11s)
+[SUCCESS] Helm release 'openchoreo-data-plane' installed/upgraded successfully
+[INFO] Creating ClusterDataPlane resource...
+[SUCCESS] ClusterDataPlane resource created
+[INFO] Installing default OpenChoreo resources...
+[INFO] Waiting for OpenChoreo CRDs to be ready...
+[SUCCESS] Default resources installed
+[INFO] Labeling default namespace...
+[SUCCESS] Default namespace labeled successfully
+[INFO] Configuring OCC CLI login...
+[SUCCESS] System token obtained
+[INFO] Checking if CLI application exists...
+[INFO] Creating CLI application...
+[SUCCESS] CLI application created
+[INFO] Saving CLI credentials...
+[SUCCESS] OpenChoreo installation completed successfully!
+[INFO] Access URLs:
+[INFO]   Backstage UI: http://openchoreo.localhost:8080/
+[INFO]     Login credentials:
+[INFO]       Admin:
+[INFO]         Username: admin@openchoreo.dev
+[INFO]         Password: Admin@123
+[INFO]       Developer:
+[INFO]         Username: developer@openchoreo.dev
+[INFO]         Password: Dev@123
+[INFO]       Platform Engineer:
+[INFO]         Username: platform-engineer@openchoreo.dev
+[INFO]         Password: PE@123
+[INFO]   OpenChoreo API: http://api.openchoreo.localhost:8080/
+[INFO]   Thunder Identity Provider: http://thunder.openchoreo.localhost:8080/
+[INFO]   Thunder Identity Provider UI: http://thunder.openchoreo.localhost:8080/console
+[INFO]     Logins:
+[INFO]       Username: admin
+[INFO]       Password: admin
+
+[INFO] OCC CLI Login:
+[INFO]   Run the following commands to login:
+[INFO]     source .occ-credentials
+[INFO]     occ config controlplane update default --url http://api.openchoreo.localhost:8080
+[INFO]     occ login --client-credentials
+
+[INFO] Next Steps:
+[INFO]   Deploy sample applications:
+[INFO]     ./deploy-react-starter.sh      # Simple React web application
+[INFO]     ./deploy-gcp-demo.sh           # GCP Microservices Demo (11 services)
+
+# Fim: 2026-06-24 11:41:59 -03
+EXIT CODE: 0

@@ -1,0 +1,45 @@
+# Evidencia #4: ./check-status.sh
+# Data: 2026-06-24 11:42:27 -03
+############################################################
+
+OpenChoreo Installation Status: Single-Cluster Mode
+Using current context: k3d-openchoreo-quick-start
+
+======================================================================
+                     OpenChoreo Component Status                     
+======================================================================
+
++- Infrastructure (Core) --------------------------------------------+
+| Cert Manager [READY]                                               |
+| KGateway [READY]                                                   |
+| External Secrets [READY]                                           |
+| OpenBao [READY]                                                    |
+| Thunder [READY]                                                    |
++--------------------------------------------------------------------+
+
++- Control Plane (Core) ---------------------------------------------+
+| Controller Manager [READY]                                         |
+| API Server [READY]                                                 |
+| Backstage [PENDING]                                                |
+| Cluster Gateway [READY]                                            |
++--------------------------------------------------------------------+
+
++- Data Plane (Core) ------------------------------------------------+
+| Cluster Agent [READY]                                              |
+| Gateway Proxy [READY]                                              |
++--------------------------------------------------------------------+
+
++- Workflow Plane (Optional) ----------------------------------------+
+| Cluster Agent [NOT INSTALLED]                                      |
+| Argo Workflow Controller [NOT INSTALLED]                           |
+| Docker Registry [NOT INSTALLED]                                    |
++--------------------------------------------------------------------+
+
++- Observability Plane (Optional) -----------------------------------+
+| Controller Manager [NOT INSTALLED]                                 |
+| Cluster Agent [NOT INSTALLED]                                      |
+| OpenSearch [NOT INSTALLED]                                         |
+| Observer [NOT INSTALLED]                                           |
++--------------------------------------------------------------------+
+
+======================================================================

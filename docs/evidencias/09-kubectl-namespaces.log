@@ -1,0 +1,20 @@
+# Evidencia #9: Namespaces do plano de controle
+# Data: 2026-06-24 11:44:15 -03
+# Comando: kubectl get namespaces -l openchoreo.dev/control-plane=true
+############################################################
+
+NAME      STATUS   AGE
+default   Active   8m36s
+
+# (contexto: todos os namespaces para visao geral)
+NAME                       STATUS   AGE
+cert-manager               Active   8m18s
+default                    Active   8m36s
+external-secrets           Active   7m27s
+kube-node-lease            Active   8m36s
+kube-public                Active   8m36s
+kube-system                Active   8m36s
+openbao                    Active   3m25s
+openchoreo-control-plane   Active   5m20s
+openchoreo-data-plane      Active   3m27s
+thunder                    Active   5m15s

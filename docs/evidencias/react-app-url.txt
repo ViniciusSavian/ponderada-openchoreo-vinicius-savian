@@ -1,0 +1,1 @@
+http://http-react-starter-development-default-cde5190f.openchoreoapis.localhost:19080

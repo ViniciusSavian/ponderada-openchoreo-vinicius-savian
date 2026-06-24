@@ -1,0 +1,28 @@
+############################################################
+# OpenChoreo - Evidencia #1: Recursos do ambiente
+# Data: 2026-06-24 11:32:36 -03
+############################################################
+
+===== Sistema Operacional / Hardware (host) =====
+ProductName:		macOS
+ProductVersion:		26.2
+BuildVersion:		25C56
+Arquitetura: arm64
+RAM total host: 18 GB
+CPUs (logical): 11
+
+===== Docker (engine) =====
+Docker version 29.2.1, build a5c7197
+ Server Version: 29.2.1
+ Operating System: Docker Desktop
+ CPUs: 11
+ Total Memory: 7.653GiB
+
+===== Recursos DENTRO de um container (alpine) =====
+Memory:
+              total        used        free      shared  buff/cache   available
+Mem:           7.7G        3.9G      802.9M       60.0M        3.0G        3.5G
+Swap:       1024.0M      838.5M      185.5M
+
+CPU Cores:
+11

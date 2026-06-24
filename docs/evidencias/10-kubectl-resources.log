@@ -1,0 +1,32 @@
+# Evidencia #10: Recursos OpenChoreo (kubectl)
+# Data: 2026-06-24 11:58:24 -03
+############################################################
+
+$ kubectl get clusterdataplanes
+NAME      AGE
+default   16m
+
+$ kubectl get environments -A
+NAMESPACE   NAME          AGE
+default     development   16m
+default     production    16m
+default     staging       16m
+
+$ kubectl get projects -A
+NAMESPACE   NAME      AGE
+default     default   16m
+
+$ kubectl get clustercomponenttypes
+NAME              WORKLOADTYPE   AGE
+scheduled-task    cronjob        16m
+service           deployment     16m
+web-application   deployment     16m
+worker            deployment     16m
+
+$ kubectl get components -A
+NAMESPACE   NAME            PROJECT   COMPONENTTYPE                AGE
+default     react-starter   default   deployment/web-application   8m9s
+
+$ kubectl get deploymentpipelines -A
+NAMESPACE   NAME      AGE
+default     default   16m
