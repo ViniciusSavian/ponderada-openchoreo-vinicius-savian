@@ -40,7 +40,7 @@ CPU Cores:
 11
 ```
 
-Print: [evidencias/01-recursos-docker.png](evidencias/01-recursos-docker.png)
+![Recursos do Docker e da máquina](evidencias/01-recursos-docker.png)
 
 ## Sobre o Colima
 
@@ -82,7 +82,7 @@ Ele baixa a imagem, monta o socket do Docker (para criar o cluster k3d de dentro
 a rede do host. Ao entrar, o container abre um shell já com `docker`, `k3d`, `kubectl` e `helm`
 disponíveis.
 
-Print: [evidencias/02-container-iniciado.png](evidencias/02-container-iniciado.png)
+![Dev Container do OpenChoreo iniciado](evidencias/02-container-iniciado.png)
 
 ## Passo 2 — Instalação
 
@@ -102,7 +102,7 @@ Apareceu um aviso de que o preload de imagens falhou (`Image preloading failed -
 installation`). Na prática isso só deixa os primeiros deploys um pouco mais lentos, porque as
 imagens são baixadas sob demanda; não atrapalhou a instalação.
 
-Print: [evidencias/03-instalacao-completa.png](evidencias/03-instalacao-completa.png)
+![Instalação concluída](evidencias/03-instalacao-completa.png)
 
 ## Passo 3 — Status
 
@@ -116,7 +116,7 @@ pronto pouco depois — confirmei quando a URL `http://openchoreo.localhost:8080
 200. Os planos Workflow e Observability aparecem como NOT INSTALLED, o que é esperado já que fiz a
 instalação base. No total ficaram 23 pods em Running.
 
-Print: [evidencias/04-check-status.png](evidencias/04-check-status.png)
+![Saída do check-status.sh](evidencias/04-check-status.png)
 
 ## Passo 4 — Backstage
 
@@ -128,9 +128,13 @@ redireciona para o Thunder (em `thunder.openchoreo.localhost:8080`), onde coloqu
 e em seguida volta autenticado para o Backstage. No dashboard dá para ver o Cluster Data Plane
 "default" conectado.
 
-Prints:
-- Tela de login: [evidencias/05-backstage-login.png](evidencias/05-backstage-login.png)
-- Dashboard logado: [evidencias/06-backstage-dashboard.png](evidencias/06-backstage-dashboard.png)
+Tela de login:
+
+![Tela de login do Backstage](evidencias/05-backstage-login.png)
+
+Dashboard depois de logar:
+
+![Dashboard do Backstage](evidencias/06-backstage-dashboard.png)
 
 ## Passo 5 — Deploy da aplicação React
 
@@ -151,10 +155,17 @@ Testei com `curl` a partir do Mac e respondeu 200. Vale notar que essa URL é di
 documentação (`react-starter-development-default...`): a versão atual coloca um prefixo `http-` e um
 hash no final do hostname, então o certo é usar a URL que o próprio script imprime.
 
-Prints:
-- Deploy (SUCCESS + URL): [evidencias/07-react-deploy.png](evidencias/07-react-deploy.png)
-- Aplicação no navegador: [evidencias/08-react-app-rodando.png](evidencias/08-react-app-rodando.png)
-- Componente no Backstage: [evidencias/11-react-componente-backstage.png](evidencias/11-react-componente-backstage.png)
+Saída do deploy (com a URL gerada):
+
+![Deploy da aplicação React](evidencias/07-react-deploy.png)
+
+Aplicação aberta no navegador:
+
+![Aplicação React rodando](evidencias/08-react-app-rodando.png)
+
+O mesmo componente visto pelo Backstage:
+
+![Componente react-starter no Backstage](evidencias/11-react-componente-backstage.png)
 
 ## Passo 6 — Recursos criados
 
@@ -191,9 +202,13 @@ scheduled-task (cronjob), service (deployment), web-application (deployment), wo
 react-starter  ->  project default, tipo deployment/web-application
 ```
 
-Prints:
-- Namespaces: [evidencias/09-kubectl-namespaces.png](evidencias/09-kubectl-namespaces.png)
-- Demais recursos: [evidencias/10-kubectl-resources.png](evidencias/10-kubectl-resources.png)
+Namespace do control-plane:
+
+![Namespaces do OpenChoreo](evidencias/09-kubectl-namespaces.png)
+
+Demais recursos (data planes, environments, projects, tipos e components):
+
+![Recursos do OpenChoreo via kubectl](evidencias/10-kubectl-resources.png)
 
 ### O que é cada recurso
 
