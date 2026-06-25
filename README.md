@@ -7,6 +7,10 @@ com deploy da aplicação de exemplo (React Starter), feita no meu MacBook.
 - **Caminho:** A — instalação completa
 - **Data:** 24/06/2026
 
+## Vídeo de apresentação
+
+https://drive.google.com/file/d/1G7AnoMxre6KQoFcOVVAoYqGqvTSZLSrU/view?usp=sharing
+
 ## Documentação
 
 A documentação completa do processo está em

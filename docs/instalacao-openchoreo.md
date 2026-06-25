@@ -7,6 +7,8 @@ Data de execução: 24/06/2026
 Este documento registra como instalei o OpenChoreo localmente, validei a interface Backstage e
 publiquei a aplicação de exemplo (React Starter), além das limitações que encontrei no caminho.
 
+Vídeo de apresentação: https://drive.google.com/file/d/1G7AnoMxre6KQoFcOVVAoYqGqvTSZLSrU/view?usp=sharing
+
 ## Ambiente
 
 | Item | Valor |
